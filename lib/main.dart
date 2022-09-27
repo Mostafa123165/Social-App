@@ -31,20 +31,20 @@ void main() async {
   var tokenDevise = await FirebaseMessaging.instance.getToken() ;
   print(tokenDevise) ;
 
-   FirebaseMessaging.onMessage.listen((event)  // App is open and i work it
+   FirebaseMessaging.onMessage.listen((event)  // App is open and it work it
   {
     showToast(message: event.data.toString(), toastState:ToastStates.SUCCESS) ;
     print('///////////////******************00') ;
     print(event.data.toString()) ;
   });
-  FirebaseMessaging.onMessageOpenedApp.listen((event)  // App is open but i don't work it (open in background) work when i open app
+  FirebaseMessaging.onMessageOpenedApp.listen((event)  // App is open but it don't work it (open in background) work when i open app
   {
     showToast(message: event.data.toString(), toastState:ToastStates.SUCCESS) ;
 
     print(event.data.toString()) ;
   });
 
-  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler); // App is open but i don't work it (open in background)
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler); // App is open but it don't work it (open in background)
 
 
   Widget widget ;
